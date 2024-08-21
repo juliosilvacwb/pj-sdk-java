@@ -4,7 +4,7 @@ public class Constants {
 
     private Constants() {
     }
-    private static final String URL_BASE = "https://cdpj.partners.AMBIENTE.com.br";
+    private static final String URL_BASE = "AMBIENTE";
     public static final String DOC_CERTIFICADO = "https://developers.bancointer.com.br/v4/docs/onde-obter-o-certificado";
 
     public static final String URL_TOKEN = URL_BASE + "/oauth/v2/token";
