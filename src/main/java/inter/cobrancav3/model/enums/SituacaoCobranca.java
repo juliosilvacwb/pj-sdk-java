@@ -6,5 +6,7 @@ public enum SituacaoCobranca {
     MARCADO_RECEBIDO,
     ATRASADO,
     CANCELADO,
-    EXPIRADO
+    EXPIRADO,
+    FALHA_EMISSAO,
+    EM_PROCESSAMENTO
 }
