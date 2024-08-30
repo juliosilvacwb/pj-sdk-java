@@ -2,6 +2,7 @@ package inter.cobrancav3;
 
 import inter.cobrancav3.cobranca.CancelaCobranca;
 import inter.cobrancav3.cobranca.EmiteCobranca;
+import inter.cobrancav3.cobranca.PagarCobrancaSandbox;
 import inter.cobrancav3.cobranca.RecuperaCobranca;
 import inter.cobrancav3.cobranca.RecuperaCobrancaPdf;
 import inter.cobrancav3.cobranca.RecuperaColecaoCobrancas;
@@ -39,6 +40,7 @@ public class CobrancaV3Sdk {
     private ObtemWebhook obtemWebhook;
     private ExcluiWebhook excluiWebhook;
     private ConsultaCallbacks consultaCallbacks;
+    private PagarCobrancaSandbox pagarCobrancaSandbox;
 
     public CobrancaV3Sdk(Config config) {
         this.config = config;
@@ -56,6 +58,20 @@ public class CobrancaV3Sdk {
             cancelaCobranca = new CancelaCobranca();
         }
         cancelaCobranca.cancelar(config, codigoSolicitacao, motivoCancelamento);
+    }
+    
+    /**
+     * Paga uma cobrança.
+     *
+     * @param codigoSolicitacao  Código de solicitação da cobrança
+     * @param pagarCom Tipo de pagamento "PIX" ou "BOLETO"
+     * @see <a href="https://developers.inter.co/references/cobranca-bolepix#tag/Cobranca/operation/pagarCobranca">Pagar cobrança</a>
+     */
+    public void pagarCobrancaSandbox(String codigoSolicitacao, String pagarCom) throws SdkException {
+        if (pagarCobrancaSandbox == null) {
+            pagarCobrancaSandbox = new PagarCobrancaSandbox();
+        }
+        pagarCobrancaSandbox.pagar(config, codigoSolicitacao, pagarCom);
     }
 
     /**
