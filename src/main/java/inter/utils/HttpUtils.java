@@ -112,7 +112,7 @@ public class HttpUtils {
                 httpRequest.addHeader("x-conta-corrente", config.getContaCorrente());
             }
             httpRequest.addHeader("x-inter-sdk", "java");
-            httpRequest.addHeader("x-inter-sdk-version", "1.0.2");
+            httpRequest.addHeader("x-inter-sdk-version", "1.0.5");
             CloseableHttpResponse response = httpClient.execute(httpRequest);
             boolean retry = handleResponse(url, response, message, config.isControleRateLimit());
             if (retry) {
