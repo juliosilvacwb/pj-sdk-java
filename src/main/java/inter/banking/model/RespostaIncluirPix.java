@@ -2,6 +2,7 @@ package inter.banking.model;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import inter.banking.model.enums.TipoRetornoPagamentoPixEnum;
@@ -18,6 +19,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RespostaIncluirPix {
 
     private TipoRetornoPagamentoPixEnum tipoRetorno;

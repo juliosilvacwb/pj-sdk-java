@@ -29,7 +29,7 @@ public class InterSdk {
     private CobrancaSdk cobrancaSdk;
     private CobrancaV3Sdk cobrancaV3Sdk;
     private final List<String> avisos;
-    public static final String VERSION = "inter-sdk-java v1.0.6";
+    public static final String VERSION = "inter-sdk-java v1.0.7";
 
     public InterSdk(String ambiente, String clientId, String clientSecret, String certificado, String senhaCertificado) throws SdkException {
         this(clientId, clientSecret, certificado, senhaCertificado);
