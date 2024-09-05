@@ -3,6 +3,8 @@ package inter.banking.model;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
+import inter.banking.model.enums.TipoRetornoPagamentoPixEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +20,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RespostaIncluirPix {
 
-    private String tipoRetorno;
+    private TipoRetornoPagamentoPixEnum tipoRetorno;
     /**
      * Id transação do pagamento Pix
      */
@@ -26,7 +28,7 @@ public class RespostaIncluirPix {
     /**
      * Id da tabela pagamento ou devolução Pix para aprovação
      */
-    private String codigoAgendamento;
+    private String codigoSolicitacao;
     private String dataPagamento;
     private String dataOperacao;
     private String idAprovacao;
