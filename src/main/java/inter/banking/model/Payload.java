@@ -1,5 +1,8 @@
 package inter.banking.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +16,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Payload {
 
+    private String chave;
     private String codigoSolicitacao;
     private String dataHoraMovimento;
     private String dataHoraSolicitacao;
@@ -22,4 +26,5 @@ public class Payload {
     private String tipoMovimentacao;
     private String valor;
 
+    private List<Erro> erros;
 }
